@@ -15,6 +15,16 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124925120-1"></script>
 <script>
+
+  function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -28,7 +38,7 @@ if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
   //ga('set', 'dimension1', uuid.v4());
 
     gtag('config', 'UA-124925120-1', {
-  'custom_map': {'dimension1': uuid.v4()}
+  'custom_map': {'dimension1': uuidv4()}
 });
   
   /* Set a cookie so we won't override the UUID we just set */
