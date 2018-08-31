@@ -17,19 +17,15 @@
 <script>
 
   function uuidv4() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
 }
-
-
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'UA-124925120-1');
 
 
 if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
@@ -37,18 +33,27 @@ if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
   /* Generate a UUID, and assign it to the browser_id custom dimension */
   //ga('set', 'dimension1', uuid.v4());
 
-    gtag('config', 'UA-124925120-1', {
-  'custom_map': {'dimension1': uuidv4()}
-});
-  
+    gtag('config', 'UA-124925120-1', 
+    {
+      'custom_map': 
+                  {
+                   'dimension1': 'browser_id',
+                   'dimension2':'utc_millisecs'
+                  }
+    });
+
+
+    gtag('event', 'Job Detail View', 
+    {
+      'browser_id': uuidv4(), 
+      'utc_millisecs': new Date().getTime()
+    });    
+
+
   /* Set a cookie so we won't override the UUID we just set */
   document.cookie = 'browser_uuid_set=1; expires=Fri, 01 Jan 2100 12:00:00 UTC; domain=.eldhosejohn.github.io; path=/';
 }
 
-    gtag('config', 'UA-124925120-1', {
-  'custom_map': {'dimension2': new Date().getTime()}
-});
-  
 
 </script>
 
