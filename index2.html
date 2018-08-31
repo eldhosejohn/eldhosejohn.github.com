@@ -29,12 +29,11 @@
   ga('create', 'UA-124925120-1', 'auto');
 
   if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
-    ga('set', 'dimension1', uuidv4.v4());
+    ga('set', 'dimension1', uuidv4());
     document.cookie = 'browser_uuid_set=1; expires=Fri, 01 Jan 2100 12:00:00 UTC; domain=.eldhosejohn.github.io; path=/';
 }
   ga('set', 'dimension2', new Date().getTime());
   ga('send', 'pageview');
-
 
 </script>
 
