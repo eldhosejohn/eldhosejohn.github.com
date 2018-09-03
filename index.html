@@ -37,19 +37,24 @@
     {
       'custom_map': 
                   {
-                   'dimension2': 'utc_millisecs',
+                   'dimension1': 'browser_id',
+                   'dimension2': 'timestamp',
                    'dimension3': 'user_id',
-                   'dimension4': 'event_name'
+                   'dimension4': 'event_name',
+                   'dimension5': 'key',
+                   'dimension6': 'value'
                   }
     });
 
-
     gtag('event', 'Job Detail View', 
     {
-      'utc_millisecs': new Date().getTime(),
+      'browser_id': '121829234329-0',
+      'timestamp': new Date().getTime(),
       'user_id':  '12345678901222233', 
-      'event_name':  'user_session'
-    });    
+      'event_name':  'ad_tracking',
+      'key': 'utm_source',
+      'value': 'adwords'
+    });
 
 
   /* Set a cookie so we won't override the UUID we just set */
