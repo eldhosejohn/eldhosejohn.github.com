@@ -37,7 +37,7 @@ if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
     {
       'custom_map': 
                   {
-                   'dimension1': 'gg'+'browser_id',
+                   'dimension1': 'browser_id',
                    'dimension2':'utc_millisecs'
                   }
     });
@@ -45,7 +45,7 @@ if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
 
     gtag('event', 'Job Detail View', 
     {
-      'browser_id': uuidv4(), 
+      'browser_id': 'ggg' + uuidv4(), 
       'utc_millisecs': new Date().getTime()
     });    
 
