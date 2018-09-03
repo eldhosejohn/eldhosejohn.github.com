@@ -36,7 +36,8 @@
     gtag('config', 'UA-124925120-1', 
     {
       'custom_map': 
-                  {''
+                  {
+                   'dimension1': 'browser_id',
                    'dimension2': 'utc_millisecs',
                    'dimension3': 'user_id',
                    'dimension4': 'event_name'
@@ -46,6 +47,7 @@
 
     gtag('event', 'Job Detail View', 
     {
+      'browser_id': '201901219028109'
       'utc_millisecs': new Date().getTime(),
       'user_id':  '12345678901222233', 
       'event_name':  'user_login'
