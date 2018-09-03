@@ -28,7 +28,7 @@
   gtag('js', new Date());
 
 
-if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
+//if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
   
   /* Generate a UUID, and assign it to the browser_id custom dimension */
   //ga('set', 'dimension1', uuid.v4());
@@ -38,21 +38,25 @@ if (document.cookie.indexOf('browser_uuid_set=1') == -1) {
       'custom_map': 
                   {
                    'dimension1': 'browser_id',
-                   'dimension2':'utc_millisecs'
+                   'dimension2': 'utc_millisecs',
+                   'dimension3': 'user_id',
+                   'dimension4': 'event_name'
                   }
     });
 
 
     gtag('event', 'Job Detail View', 
     {
-      'browser_id': 'ggg' + uuidv4(), 
-      'utc_millisecs': new Date().getTime()
+      'browser_id':  '12121212121212', 
+      'utc_millisecs': new Date().getTime(),
+      'user_id':  '', 
+      'event_name':  'user_registration'
     });    
 
 
   /* Set a cookie so we won't override the UUID we just set */
   document.cookie = 'browser_uuid_set=1; expires=Fri, 01 Jan 2100 12:00:00 UTC; domain=.eldhosejohn.github.io; path=/';
-}
+//}
 
 
 </script>
