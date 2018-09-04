@@ -48,9 +48,9 @@
 
     gtag('event', 'Job Detail View', 
     {
-      'browser_id': '121829234329-0',
+      'browser_id':  uuidv4(),
       'timestamp': new Date().getTime(),
-      'user_id':  '12345678901222233', 
+      'user_id':  '123456', 
       'event_name':  'ad_tracking',
       'key': 'utm_source',
       'value': 'adwords'
@@ -66,7 +66,7 @@
 <script>
   setTimeout(function(){
    window.location.reload(1);
-}, 2000);
+}, 1000);
 </script>
  </body>
 </html>
